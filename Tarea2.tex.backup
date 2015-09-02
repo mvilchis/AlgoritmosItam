@@ -133,12 +133,7 @@
    \[= 1+0   \]
   Con lo que la desigualdad $(4)$ se sigue conservando.  
  
-   \begin{figure}[H]
-         \centering
-          %trim left bottom right top
-          \includegraphics[trim=0cm 0cm 0cm 0cm, width=15cm]{inciso4.png} 
-          \caption{Gráfica que muestra la comparación entre las funciones}
-      \end{figure}
+  
   \item $1.\ for\ i = 1 \ to \ n$\\
         $2.\ \ \ \ for\ j = 1\ to\ i$\\
         $3.\ \ \ \ \ \ \ \ for\ k = 1\ to\ i$ \\
@@ -158,15 +153,7 @@ que la línea 3, diferido por una constante. i.e.  $c_4 * \left(\frac{n*(n+1)*(2
 Por lo que la complejidad del código es: 
 \[c_1* n + c_2*\left(\frac{n*(n+1)}{2}\right) +c_3 * \left(\frac{n*(n+1)*(2n+1)}{6} \right) + c_4 * \left(\frac{n*(n+1)*(2n+1)}{6} \right) \]
 Multiplicando por 12 y desarrollando obtenemos: 
-\[c'_1* n + c'_2*\left(n^2 +n )\right) +c'_3 * \left(n + 3 n^2 + 2 n^3 \right) = c'_3*2n^3+ c'_2*n^2+ c'_1*n + c_0 *n\]
-Basta notar que no se cumple $\theta(n^3) \notin \theta(n^2) $, supongamos que se cumple
-implica que $n < c_n$ para alguna constante $c_n$, sin embargo siempre se puede dar una 
-n mayor a la constante establecida, y 
-si consideramos la \textbf{Nota 1}, implicaría que no podemos encontrar el $n_0 $ tal que 
-$n_0 < n \in \mathbb{N}$ que cumpla con la proposición. \\
-
-Por lo tanto, el código no se encuentra en el orden de $\theta(n^2)$
-
+\[c'_1* n + c'_2*\left(n^2 +n )\right) +c'_3 * \left(n + 3 n^2 + 2 n^3 \right)\]
 
 
 

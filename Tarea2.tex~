@@ -133,12 +133,7 @@
    \[= 1+0   \]
   Con lo que la desigualdad $(4)$ se sigue conservando.  
  
-   \begin{figure}[H]
-         \centering
-          %trim left bottom right top
-          \includegraphics[trim=0cm 0cm 0cm 0cm, width=15cm]{inciso4.png} 
-          \caption{Gráfica que muestra la comparación entre las funciones}
-      \end{figure}
+  
   \item $1.\ for\ i = 1 \ to \ n$\\
         $2.\ \ \ \ for\ j = 1\ to\ i$\\
         $3.\ \ \ \ \ \ \ \ for\ k = 1\ to\ i$ \\

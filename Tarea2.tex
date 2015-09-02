@@ -9,19 +9,57 @@
 \usepackage[utf8]{inputenc} 
 \usepackage{amsmath,amssymb,amsfonts,latexsym} %Soporte para símbolos y font matemáticos
 \usepackage{float}
+\usepackage{amsthm}
 \usepackage{enumerate}
 % \usepackage[options]{algorithm2e}
 \DeclareGraphicsExtensions{.pdf,.png,.jpg}
 \DeclareGraphicsRule{.wmf}{bmp}{}{}
-
+\newtheorem{no}{Nota}
 \author{Trinidad Hern\'andez Norma Ver\'onica \\
         Vilchis Dom\'inguez Miguel Alonso}
 \title{Tarea 2}
+\date{}
 \begin{document}
 \maketitle
 
 \section{Ejercicios}
 
 \begin{enumerate}
- \item 
+ \item \textbf{Demostrar si las siguientes funciones son $\theta(n^2)$}
+ \no Sea $f(n)$ una función por definición si $f(n) \in \theta(g(n))$ 
+ implica que $ \exists c_1, c_2 \in \mathbb{N} $ y $\exists n_0 \in \mathbb{N}$ 
+ tales que $0 \leq c_1*g(n) \leq f(n) \leq c_2*g(n)$.
+ \begin{enumerate}
+  \item $60n^2 + 5n +1$\\
+  Por demostrar que $60n^2 + 5n +1 \in \theta(n^2)$. Por la \textbf{Nota 1}
+  implica mostrar las constantes tales que la función queda acotada por 
+  $n^2$ al multiplicarla por dichas constantes. Es decir:\\
+  \begin{equation} 
+   c_1* n^2 \leq 60n^2 + 5n +1 \leq c_2 * n^2 
+   \end{equation}
+  Sii
+  \[ c_1 \leq 60 + \frac{5}{n} + \frac{1}{n^2} \leq c_2 \]
+  Se propone $n_0 = 10$, $c_1 = 59$, $c_2 = 70$  Por lo que
+  \[ 59 \leq 60 + \frac{5}{10} + \frac{1}{100} = 6051/100 \leq 70  \]
+  Con lo que se sigue cumpliendo la desigualdad. Para finalizar la demostración 
+  basta con mostrar que la desigualdad se sigue cumpliendo para
+  $n > n_0$ con $n \in \mathbb{N}$.\\ 
+  En efecto, para hacer una buena aproximación de lo que ocurre con 
+  $n$ grandes, tomamos el $lim_{n \rightarrow \infty}$. Es decir:
+  \[ lim_{n \rightarrow \infty} (60 + \frac{5}{n} + \frac{1}{n^2} )\]
+   \[  = lim_{n \rightarrow \infty} 60 + lim_{n \rightarrow \infty} \frac{5}{n} + lim_{n \rightarrow \infty} \frac{1}{n^2} \]
+  \[  = 60 + 0+0 \]
+  Con lo que, se sigue cumpliendo la desigualdad $(1)$
+  
+  \item $2n^2 - 16 n + 35$
+  \item $3 n^2 + 2 n ln n$
+  \item $For\ i = 1 \ to \ n$\\
+        $.\ \ \ \ For\ j = 1 to i$\\
+        $.\ \ \ \ \ \ \ \ For\ x = 1 to i$ \\
+        $.\ \ \ \ \ \ \ \ \ \ \ \ x= x +1$ \\                     
+
+ \end{enumerate}
+
 \end{enumerate}
+\end{document}
+

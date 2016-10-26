@@ -1,7 +1,12 @@
 import profile
 import sys
 import getopt
+import time 
+counter_part = 0
+counter_part_mem = 0
 def n_part(m,n):
+    global counter_part 
+    counter_part += 1
     if (m == 1 or n == 1):
         return 1
     else:
@@ -41,22 +46,24 @@ def main(recursivo = False):
     m_lim = 100
     if recursivo:
         """ Medimos el tiempo para recursivo """
+        global counter_part
         for m in range (1,m_lim):
             for n in range (1,n_lim):
-                Matrix = [[-1 for x in range(n+1)] for y in range(m+1)]
-                print "*"*10
-                print "%d %d" %(m,n)
-                profile.run('n_part(%d,%d)' %(m,n))
+                counter_part = 0
+                start = time.time()
+                res = n_part(m,n)
+                print "%d %d %s %d %d"% (m,n, time.time() - start, counter_part, res) 
     else:
 
         """ Medimos el tiempo para el caso pd """
+        global counter_part_mem
         for m in range (1,m_lim):
             for n in range (1,n_lim):
+                counter_part_mem = 0
+                start = time.time()
                 Matrix = [[-1 for x in range(n+1)] for y in range(m+1)]
-                print "*"*10
-                print "%d %d" %(m,n)
-                profile.runctx('print n_part_mem(m,n,Matrix); print', globals(), {'m':m, 'n':n, 'Matrix':Matrix})
-                #profile.run('n_part_mem(%d,%d,%s)' %(m,n, Matrix))
+                res = n_part_mem(m,n,Matrix)
+                print "%d %d %s %d %d"% (m,n, time.time() - start, counter_part_mem, res) 
 
 if __name__ == '__main__':
     argv = sys.argv[1:]
